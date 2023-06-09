@@ -1,0 +1,60 @@
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.menu {
+  display: flex;
+  background-color: beige;
+}
+
+.menu > li > a {
+  padding: 20px 30px;
+}
+
+.menu a {
+  min-width: 150px;
+}
+
+.sub-menu {
+  position: absolute;
+  z-index: 5;
+  min-width: auto;
+  background-color: bisque;
+  transform-origin: 0 0;
+  transform: rotateX(-90deg);
+  transition: transform 500ms ease-in;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.sub-menu li {
+  position: relative;
+}
+
+.sub-menu .sub-menu {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  transition: transform 500ms ease-in;
+  visibility: hidden;
+}
+
+.sub-menu > li > a {
+  padding: 10px 20px;
+}
+
+.menu li:hover > .sub-menu {
+  visibility: visible;
+  opacity: 1;
+  transform: rotateX(0deg);
+}
